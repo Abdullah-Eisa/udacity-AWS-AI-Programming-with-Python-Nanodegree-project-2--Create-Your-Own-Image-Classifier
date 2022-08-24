@@ -13,11 +13,14 @@ import json
 from PIL import Image
 import utils
 
+arch = {"vgg16":25088,"densenet121":1024}
+
 def nn_prepare(structure='vgg16',dropout=0.1,hidden_units=4096, lr=0.001, device='gpu'):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     if structure == 'vgg16':
         model = models.vgg16(pretrained=True)
-
+    elif structure == 'densenet121':
+        model = models.densenet121(pretrained=True)
     
     for para in model.parameters():
         para.requires_grad = False

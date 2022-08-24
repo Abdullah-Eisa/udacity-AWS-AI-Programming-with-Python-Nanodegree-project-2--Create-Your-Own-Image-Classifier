@@ -15,6 +15,7 @@ import utils
 import model_functions
 import argparse
 
+arch = {"vgg16":25088,"densenet121":1024}
 
 
 # create a parser for train.py argument

@@ -12,7 +12,7 @@ from collections import OrderedDict
 from torch.autograd import Variable
 
 
-arch = {"vgg16":25088}
+arch = {"vgg16":25088,"densenet121":1024}
 
 def load_data(root = "./flowers"):
 
